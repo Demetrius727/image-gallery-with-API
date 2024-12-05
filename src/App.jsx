@@ -10,17 +10,21 @@ import axios from "axios";
 function App() {  
   const [query, setQuery] = useState("");
   const [categoria, setCategoria] = useState("");
+  const [fotos, setFotos] = useState([]);
 
   const fetchData = async ({ query, categoria }) => {
     const apiKey = import.meta.env.VITE_UNSPLASH_API_KEY;
 
-    const response = await axios.get('https://api.unsplash.com/search/photos', {
+    const response = await axios.get('https://api.unsplash.com/photos/random', {
       params: {
         client_id: apiKey,
+        count: 10, // Limitando para 10 fotos
       }
     });
 
-    console.log(response);
+    setFotos(response.data);
+
+    console.log(response.data);
   }
 
   useEffect(() => {
@@ -30,7 +34,7 @@ function App() {
   return (
     <div className='container'>
       <Searchbar />
-      <FotoList />
+      <FotoList fotos={fotos}/>
       <FotoAmpliada />
     </div>
   )
