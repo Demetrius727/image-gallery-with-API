@@ -1,6 +1,6 @@
 # image-gallery-with-API
 
-Projeto de uma Galeria de Imagens, utilizando a Unsplash API, que desenvolvi através do curso Matheus Battisti na Udemy.
+Projeto de Galeria de Imagens que desenvolvi através do curso Matheus Battisti na Udemy, utilizando a Unsplash API.
 
 - REACT
 - JAVASCRIPT
